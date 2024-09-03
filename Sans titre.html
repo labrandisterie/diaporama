@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2487.6">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Diaporama&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Styles de base pour le diaporama */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.slideshow-container {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: auto;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>overflow: hidden;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.slides {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.fade {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>animation-name: fade;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>animation-duration: 2s; /* La durée d'une slide */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>@keyframes fade {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>from {opacity: .4}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>to {opacity: 1}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div class="slideshow-container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="slides fade"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;img src="https://via.placeholder.com/800x400?text=Image+1" style="width:100%"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="slides fade"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;img src="https://via.placeholder.com/800x400?text=Image+2" style="width:100%"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="slides fade"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;img src="https://via.placeholder.com/800x400?text=Image+3" style="width:100%"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>let slideIndex = 0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const slideDuration = 2000; // 2 secondes par slide</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function showSlides() {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let slides = document.getElementsByClassName("slides");</p>
+<p class="p1"><span class="Apple-converted-space">        </span>for (let i = 0; i &lt; slides.length; i++) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>slides[i].style.display = "none";</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>slideIndex++;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (slideIndex &gt; slides.length) {slideIndex = 1}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>slides[slideIndex-1].style.display = "block";</p>
+<p class="p1"><span class="Apple-converted-space">        </span>setTimeout(showSlides, slideDuration); // Change de slide toutes les 2 secondes</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>showSlides(); // Lancer le diaporama</p>
+<p class="p1">&lt;/script&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
